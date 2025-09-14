@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api",userRoute)
-
+app.get("/",(req,res)=>{res.json({"status":"sucess"})});
 
 
 
