@@ -12,9 +12,11 @@ connect();
 
 //middleware
 app.use(cors({
-    origin:"http://localhost:3000",
-    credentials: true 
-}))
+  origin: "*", // ✅ sab allow ho jayega (web, mobile, postman, etc.)
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // ✅ allowed methods
+  allowedHeaders: ["Content-Type", "Authorization"], // ✅ allowed headers
+  credentials: true // ✅ cookies / auth headers allow
+}));
 app.use(cookieParser());
 app.use(express.json());
 
